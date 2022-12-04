@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demotest-deployment
+  labels:
+    app: demotest
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demotest
+  template:
+    metadata:
+      labels:
+        app: demotest
+    spec:
+      containers:
+        - name: demotest-server
+          image: disconhecido/demotest:lastest
+          ports:
+            - containerPort: 8089
+
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: urlshortener-test-service
+spec:
+  selector:
+    app: shortenerurl
+  type: NodePort
+  ports:
+    - protocol: TCP
+      port: 88
+      targetPort: 88
+      nodePort: 31000
