@@ -26,13 +26,13 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: urlshortener-test-service
+  name: demotest-service
 spec:
   selector:
     app: shortenerurl
   type: NodePort
   ports:
     - protocol: TCP
-      port: 88
-      targetPort: 88
+      port: 8089
+      targetPort: 8089
       nodePort: 31000
