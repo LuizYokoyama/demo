@@ -29,7 +29,7 @@ metadata:
   name: demotest-service
 spec:
   selector:
-    app: shortenerurl
+    app: demotest
   type: NodePort
   ports:
     - protocol: TCP
