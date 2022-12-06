@@ -11,12 +11,17 @@ pipeline {
 
   stages {
 
-    stage('Checkout Source') {
+    stage('Pull Source from git') {
       steps {
         git branch: 'master', url: 'https://github.com/LuizYokoyama/demo.git'
       }
     }
 
+    stage('Flyway MIGRATES') {
+      steps {
+        flywayrunner commandLineArgs: '', credentialsId: 'postgres', flywayCommand: 'info', installationName: 'flyway-test', locations: 'filesystem:/var/lib/jenkins/workspace/demotest', url: 'jdbc:postgresql://172.17.0.3:5432/postgres'
+      }
+    }
 
     stage('gradle') {
       steps {
