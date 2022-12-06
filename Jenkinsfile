@@ -19,7 +19,7 @@ pipeline {
 
     stage('Flyway MIGRATES') {
       steps {
-        flywayrunner commandLineArgs: '', credentialsId: 'postgres', flywayCommand: 'info', installationName: 'flyway-test', locations: 'filesystem:/var/lib/jenkins/workspace/demotest', url: 'jdbc:postgresql://172.17.0.3:5432/postgres'
+        flywayrunner commandLineArgs: '', credentialsId: 'postgres', flywayCommand: 'info', installationName: 'flyway-test', locations: 'filesystem:/var/lib/jenkins/workspace/demotest/migrates', url: 'jdbc:postgresql://172.17.0.3:5432/postgres'
       }
     }
 
