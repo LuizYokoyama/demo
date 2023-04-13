@@ -1,8 +1,57 @@
 # Demo Jenkins pipeline with Flyway migrates and deploy on Minikube
 
+Esta é uma demonstração de execução de uma pipeline do Jenkins que pega o código deste repositório git "***PULL***", aplica 
+o migrates do Flyway no banco de dados Postgresql, constroi a aplicação com o Gradle, cria a imagem Docker, faz o "***PUSH***" 
+desta imagem para o DockerHub e depois realiza o "***DEPLOY***" desta aplicação no Minikube.
+
+
 ## Passos para execução:
 
 ### 1º Instalar e inicializar o Minikube, Postgresql e o Jenkins
+
+***Jenkins:***
+
+O Jenkins pode ser instalado em um Docker, Kubernetes, Linux e vários outros sistemas.
+
+Nesta demonstração será usada o Jenkins instalado no Linux:
+
+Mais informações sobre a instalação do Jenkins estão disponíveis na sua documentação oficial:
+
+https://www.jenkins.io/doc/book/installing/
+
+Para instalar o ***Jenkins*** no Linux ***Debian/Ubuntu***:
+
+#### Executar: 
+
+***sudo apt-get update***
+
+***sudo apt-get install jenkins***
+
+#### Instalação do Java:
+
+Jenkins requer Java para rodar, mas certas  versões de Java são incompatíveis com Jenkins.
+
+***sudo apt install openjdk-17-jre***
+
+
+
+#### Iniciar Jenkins:
+
+Você pode ativar o serviço Jenkins para iniciar na inicialização com o comando:
+
+***sudo systemctl enable jenkins***
+
+Você pode iniciar o serviço Jenkins com o comando:
+
+***sudo systemctl start jenkins***
+
+Você pode verificar o status do serviço Jenkins usando o comando:
+
+***sudo systemctl status jenkins***
+
+Se tudo foi configurado corretamente, você deve ver uma saída como esta:
+
+![img_20.png](img_20.png)
 
 ### 2º Acessar a pagina do Jenkins:
 ***http://localhost:8080/***
