@@ -13,7 +13,7 @@ desta imagem para o DockerHub e depois realiza o "***DEPLOY***" desta aplicaçã
 
 O Jenkins pode ser instalado em um Docker, Kubernetes, Linux e vários outros sistemas.
 
-Nesta demonstração será usada o Jenkins instalado no Linux:
+Nesta demonstração será usado o Jenkins instalado no ***Linux***.
 
 Mais informações sobre a instalação do Jenkins estão disponíveis na sua documentação oficial:
 
