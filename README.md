@@ -37,11 +37,11 @@ Jenkins requer Java para rodar, mas certas  versões de Java são incompatíveis
 
 #### Iniciar Jenkins:
 
-Você pode ativar o serviço Jenkins para iniciar na inicialização com o comando:
+Você pode ativar o serviço Jenkins para iniciar na inicialização do sistema Linux com o comando:
 
 ***sudo systemctl enable jenkins***
 
-Você pode iniciar o serviço Jenkins com o comando:
+Ou você pode iniciar o serviço Jenkins com o comando:
 
 ***sudo systemctl start jenkins***
 
